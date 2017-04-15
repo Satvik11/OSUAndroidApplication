@@ -6,13 +6,27 @@ public class WeatherData{
 	
 	static String weatherKey = "79eff3c2692ee9e076066c4f25ddc98d";
 	
-	public static double getWeatherTemp(double lat, double lon){
+	public static double getLatLongTemp(double lat, double lon){
 		// Get Weather Data
 		double temp = 0;
 		String url = "http://samples.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + weatherKey;
 		return temp;
-		
 	}
+	public static double getCityTemp(String city){
+		// Get Weather Data
+		double temp = 0;
+		String url = "http://samples.openweathermap.org/data/2.5/weather?q="+city+"&appid="+weatherKey;
+		return temp;
+	}
+	public static double getZipTemp(int zip){
+		// Get Weather Data
+		double temp = 0;
+		String url = "http://samples.openweathermap.org/data/2.5/weather?zip="+ zip+ "&appid="+ weatherKey;
+		return temp;
+	}
+	
+	
+	
 	StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
             new Response.Listener<String>() {
     @Override
