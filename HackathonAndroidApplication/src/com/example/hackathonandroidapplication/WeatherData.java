@@ -1,7 +1,9 @@
 package com.example.hackathonandroidapplication;
 import android.net.Uri;
+
 import android.os.Bundle;
-import android.
+import android.util.Log;
+
 public class WeatherData{
 	
 	static String weatherKey = "79eff3c2692ee9e076066c4f25ddc98d";
@@ -24,19 +26,9 @@ public class WeatherData{
 		String url = "http://samples.openweathermap.org/data/2.5/weather?zip="+ zip+ "&appid="+ weatherKey;
 		return temp;
 	}
-	
-	
-	
-	StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-            new Response.Listener<String>() {
-    @Override
-    public void onResponse(String response) {
-        // Display the first 500 characters of the response string.
-        //String recivedjsn = mTextView.setText( response.substring(0,500));
-    	System.out.println(response);
-    }
 }
-
+           // new Response.Listener<String>() {
+   
 
 
 
