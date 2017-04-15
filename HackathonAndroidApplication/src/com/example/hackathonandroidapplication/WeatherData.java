@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class WeatherData{
+
 	
 	static String weatherKey = "79eff3c2692ee9e076066c4f25ddc98d";
 	
@@ -26,6 +27,24 @@ public class WeatherData{
 		String url = "http://samples.openweathermap.org/data/2.5/weather?zip="+ zip+ "&appid="+ weatherKey;
 		return temp;
 	}
+	SyncClient.post(url, params, new JsonHttpResponseHandler() {
+		@Override
+		public void onStart() {
+			// you can do something here before request starts
+		}
+
+		@Override
+		public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+			// success logic here
+		}
+
+
+		@Override
+		public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject errorResponse) {
+			// handle failure here
+		}
+
+	});
 }
            // new Response.Listener<String>() {
    
